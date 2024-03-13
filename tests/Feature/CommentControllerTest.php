@@ -15,7 +15,7 @@ class CommentControllerTest extends TestCase
     #[TestDox('When user is authenticated, given valid data, should create profile')]
     public function testShouldCreateComment(): void
     {
-        $user = UserFactory::new()->createOne(['id' => 1]);
+        $user = UserFactory::new()->createOne();
         $profile = ProfileFactory::new()
             ->for(UserFactory::new(), 'creator')
             ->createOne();
@@ -30,7 +30,7 @@ class CommentControllerTest extends TestCase
     #[TestDox('When user is authenticated, given valid data but multiple comment for same user, should not create profile')]
     public function testShouldNotCreateMultipleCommentsOnProfile(): void
     {
-        $user = UserFactory::new()->createOne(['id' => 1]);
+        $user = UserFactory::new()->createOne();
         $profile = ProfileFactory::new()
             ->for(UserFactory::new(), 'creator')
             ->createOne();
@@ -51,7 +51,7 @@ class CommentControllerTest extends TestCase
     #[TestDox('When user is authenticated, given missing data, should return validation error')]
     public function testShouldNotCreateCommentInvalidData(): void
     {
-        $user = UserFactory::new()->createOne(['id' => 1]);
+        $user = UserFactory::new()->createOne();
         $profile = ProfileFactory::new()
             ->for(UserFactory::new(), 'creator')
             ->createOne();
