@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Dto\StoreCommentDto;
-use App\Http\Requests\Profile\StoreCommentRequest;
+use app\Http\Requests\Comment\StoreCommentRequest;
 use App\Http\Resources\Profile\CommentResource;
 use App\Models\Profile;
 use App\Services\CommentService;
